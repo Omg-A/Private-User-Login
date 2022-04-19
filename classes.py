@@ -34,7 +34,7 @@ show_captcha.place(relx=0.5, rely=0.9, anchor=CENTER)
 
 class UserDB:
     def __init__(self):
-        self.__username = "James123"
+        self.__username = "James"
         self.__password = "J11"
         self.captcha = "Wa3"
     
@@ -43,19 +43,19 @@ class UserDB:
         show_password["text"] = "Password: " + self.__password
         show_captcha["text"] = "Captcha: " + self.captcha
 
-obj = UserDB
+obj1 = UserDB()
 
-def AddUser(self):
+def AddUser():
     global obj
-    obj.username = input_name.get()
-    obj.password = input_password.get()
-    obj.captcha = input_captcha.get()
+    obj1.username = input_name.get()
+    obj1.password = input_password.get()
+    obj1.captcha = input_captcha.get()
     print("Details have been updated")
 
-button_update = Button(root, text="Update Details", bg="gold", command=obj.ShowUser)
+button_update = Button(root, text="Update Details", bg="gold", command=AddUser)
 button_update.place(relx=0.3, rely=0.5, anchor=CENTER)
 
-button_show = Button(root, text="Show Details", bg="gold", command=AddUser)
+button_show = Button(root, text="Show Details", bg="gold", command=obj1.ShowUser)
 button_show.place(relx=0.7, rely=0.5, anchor=CENTER)
 
 root.mainloop()
